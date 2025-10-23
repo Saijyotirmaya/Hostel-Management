@@ -8,15 +8,16 @@ sap.ui.define([
     return Controller.extend("sap.ui.com.project1.controller.Hostel", {
 
         onInit: function () {
-            this._loadFilteredData();
+            this._loadFilteredData("KLB01");
         },
 
-        _loadFilteredData: function () {
+        _loadFilteredData: function (sCompanyCode) {
             var oView = this.getView();
             var sUrl = "https://rest.kalpavrikshatechnologies.com/HM_Rooms";
+            var sFilteredUrl = sUrl + "?CompanyCode=" + encodeURIComponent(sCompanyCode);
 
             $.ajax({
-                url: sUrl,
+                url: sFilteredUrl,
                 type: "GET",
                 contentType: "application/json",
 
@@ -26,12 +27,25 @@ sap.ui.define([
                 },
                 success: function (response) {
                     console.log("Service call success", response);
-                    const allRooms = response?.data || [];
-                    const activeRooms = allRooms.filter((room) => room.Status === "true");
-                    const oModel = new sap.ui.model.json.JSONModel({ Rooms: activeRooms });
-                    oView.setModel(oModel, "RoomModel");
-                    sap.m.MessageToast.show("Rooms loaded successfully");
-                },
+                    const allRooms = response?.commentData || [];
+
+                    // Use all rooms without filtering by Status
+                    const hasSingle = allRooms.some(room => room.BedTypes === "Single");
+                    const hasDouble = allRooms.some(room => room.BedTypes === "Double");
+                    const hasFour = allRooms.some(room => room.BedTypes === "Four");
+
+                    // Set visibility model
+                    const oVisibilityModel = new JSONModel({
+                        singleVisible: hasSingle,
+                        doubleVisible: hasDouble,
+                        fourVisible: hasFour
+                    });
+                    oView.setModel(oVisibilityModel, "VisibilityModel");
+
+                    const oRoomsModel = new JSONModel({ Rooms: allRooms });
+                    oView.setModel(oRoomsModel, "RoomModel");
+
+                }.bind(this),
                 error: function (xhr, status, error) {
                     console.error("AJAX Error:", status, error);
                     sap.m.MessageToast.show("Error fetching data: " + error);

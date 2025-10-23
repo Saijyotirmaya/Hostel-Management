@@ -59,8 +59,7 @@
 .loginButton {
   background-color: #1bb2bf !important;
   border-radius: 10px !important;
-  color: rgb(214, 22, 22) !important;
-  font-weight: bold;
+  color: white !important;
   font-size: 1rem !important;
 }
 
@@ -90,9 +89,9 @@
   font-weight: bold;
 }
 .RoomBook{
-    font-size: 50px;
-    height: 100px;
-    width: 100px;
+    font-size: 18px !important;
+    height: 100px !important;
+    width: 200px !important;
 }
 
 .HostelRooms{
@@ -113,4 +112,17 @@
       border-radius: 10px 10px 0 0 ;
   max-width: 100%;
   height: auto;
+}
+.sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnTransparent .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnDefault .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnBack .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnUp .sapMBtnContent {
+    line-height: 2rem;
+    color: white;
+    font-size: 15px;
+}
+.sapMITBFilter .sapMITBText .sapMITHTextContent {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    font-size: 18px;
 }

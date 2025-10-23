@@ -24,8 +24,8 @@
 			<tnt:ToolHeader>
                <ToolbarSpacer />
                  
-				<IconTabHeader id="mainTabHeader" select="onTabSelect">
-					<items>
+				<IconTabHeader id="mainTabHeader" select="onTabSelect" >
+					<items >
 						<IconTabFilter key="idHome" text="Home" />
 						<IconTabFilter key="idRooms" text="Rooms"/>
 						<IconTabFilter key="idFacilities" text="Facilities"/>
@@ -46,7 +46,7 @@
 								<Text class="custom-welcome sapUiMediumMarginBegin sapUiTinyMarginTopBottom " text="Shah Hostel"/>
 								<Text text="Your New Home Away to me" class="custom-tagline sapUiTinyMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
 							</VBox>
-                            <Button text="Book Room" class="sapUiLargeMarginBegin RoomBook" press="onpressBookrooms" />
+                            <Button text="Book Room" class="RoomBook sapUiLargeMarginBegin " press="onpressBookrooms" />
 						</l:Grid>
 					</ScrollContainer>
                     <Page id="idRooms" showHeader="false">
@@ -63,7 +63,7 @@
                       <l:Grid defaultSpan="XL4 L4 M6 S12" width="100%" hSpacing="2" vSpacing="2">
             
             <!-- Single Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/singleVisible}">
                 <HBox justifyContent="Center" class="section-image">
                     <Image src="./image/SingleBed.png" class="section-image" press="onPressSingle"/>
                 </HBox>
@@ -75,7 +75,7 @@
             </VBox>
 
             <!-- Double Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/doubleVisible}">
                 <HBox justifyContent="Center" class="section-image">
                     <Image src="./image/DoubleBed.png" class="section-image"/>
                 </HBox>
@@ -87,7 +87,7 @@
             </VBox>
 
             <!-- 4 Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/fourVisible}">
                 <HBox justifyContent="Center" class="section-image">
                     <Image src="./image/4Bed.png" class="section-image"/>
                 </HBox>
