@@ -1,58 +1,115 @@
-<mvc:View
-  controllerName="sap.ui.com.project1.controller.Hostel"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:core="sap.ui.core" 
-  xmlns:tnt="sap.tnt" 
-  displayBlock="true">
+<mvc:View controllerName="sap.ui.com.project1.controller.Hostel" displayBlock="true" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core" 
+	xmlns:tnt="sap.tnt" 
+	xmlns:f="sap.f" 
+	xmlns:fb="sap.ui.comp.filterbar" 
+	xmlns:svm="sap.ui.comp.smartvariants" height="100%">
+	<tnt:ToolPage>	
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Image src="./image/LOGO.png" height="250px" width="250px" class="sapUiTinyMarginEnd weblogo"  tooltip="Company Logo"/>
+				<!-- <Title level="H1" text="SHAH HOSTEL" class="custom-text"/> -->
+				<ToolbarSpacer/>
+				<Button  text="LOGIN / SIGN UP" class="loginButton" tooltip="{i18n>tooltipLogin}" press="onpressLogin">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:subHeader>
+			<tnt:ToolHeader>
+               <ToolbarSpacer />
+                 
+				<IconTabHeader id="mainTabHeader" select="onTabSelect">
+					<items>
+						<IconTabFilter key="idHome" text="Home" />
+						<IconTabFilter key="idRooms" text="Rooms"/>
+						<IconTabFilter key="idFacilities" text="Facilities"/>
+						<IconTabFilter key="idContact" text="Contact"/>
+						<IconTabFilter key="idAdddata" text="Add Data"/>
+						
+					</items>
+				</IconTabHeader>
+			</tnt:ToolHeader>
+		</tnt:subHeader>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer">
+				<pages>
+					<ScrollContainer id="idHome" horizontal="false" vertical="true" height="100%" class="sapUiContentPadding Homepage sapUiTinyMargin">
+						<l:Grid defaultSpan="XL12 L12 M12 S12" width="100%" class="position-welcome" >
+							<VBox class="sapUiLargeMarginTop">
+								<Text class="custom-welcome sapUiTinyMarginTopBottom" textAlign="Center" text="WelCome To "/>
+								<Text class="custom-welcome sapUiMediumMarginBegin sapUiTinyMarginTopBottom " text="Shah Hostel"/>
+								<Text text="Your New Home Away to me" class="custom-tagline sapUiTinyMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+							</VBox>
+                            <Button text="Book Room" class="sapUiLargeMarginBegin RoomBook" press="onpressBookrooms" />
+						</l:Grid>
+					</ScrollContainer>
+                    <Page id="idRooms" showHeader="false">
 
-  <Page id="page" showHeader="true" class="mainPage">
-    <customHeader>
-      <Bar design="Header" class="sapUiContentPadding headerBar">
-        <contentLeft>
-          <HBox alignItems="Center" class="logoContainer">
-            <Image src="./image/LOGO.png" width="100px" height="100px" class="sapUiTinyMarginTop logoImage" />
-            <Text text="SHAH HOSTEL" class="sapUiTinyMarginBegin sapUiSmallBold logoText" />
-          </HBox>
-        </contentLeft>
-       
-      <contentRight>
-  <HBox alignItems="Center" class="navBar sapUiTinyMarginTopBottom">
-    <Link text="Home" class="navText sapUiMediumMarginEnd" press="onNavPress" />
-    <Link text="Rooms" class="navText sapUiMediumMarginEnd" press="onNavPress" />
-    <Link text="Facilities" class="navText sapUiMediumMarginEnd" press="onNavPress" />
-    <Link text="Contact" class="navText sapUiMediumMarginEnd" press="onNavPress" />
-    <Link text="Add data" class="navText sapUiMediumMarginEnd" press="onNavPress" />
-    <Button text="LOGIN / SIGN UP" class="loginButton" press=".onLoginPress" />
-  </HBox>
-</contentRight>
+					<ScrollContainer  horizontal="false" vertical="true" height="80%" class="sapUiContentPadding HostelRooms sapUiTinyMargin">
+						<l:Grid defaultSpan="XL12 L12 M12 S12" width="100%" class="position-welcome">
+							<VBox class="sapUiLargeMarginTop">
+								<Text class="Welcomeroomtext sapUiTinyMarginTopBottom" textAlign="Center" text="Book Your Room "/>
+								<Text class="Welcomeroomtext sapUiMediumMarginBegin sapUiTinyMarginTopBottom " text="Shah Hostel"/>
+								<Text text="Your New Home Away to me" class="Welcomeroomtext sapUiTinyMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+							</VBox>
+						</l:Grid>
+					</ScrollContainer>
+                      <l:Grid defaultSpan="XL4 L4 M6 S12" width="100%" hSpacing="2" vSpacing="2">
+            
+            <!-- Single Bed -->
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+                <HBox justifyContent="Center" class="section-image">
+                    <Image src="./image/SingleBed.png" class="section-image" press="onPressSingle"/>
+                </HBox>
+                <Text class="hr-text sapUiSmallMargin" text="Single Bed Room"/>
+                <Text class="description-text sapUiSmallMargin" text="{i18n>SingleBedDesc}"/>
+                <HBox justifyContent="End">
+                    <Button text="Book Now" press="onSingleRoomPress" width="100px"/>
+                </HBox>
+            </VBox>
 
-      </Bar>
-    </customHeader>
+            <!-- Double Bed -->
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+                <HBox justifyContent="Center" class="section-image">
+                    <Image src="./image/DoubleBed.png" class="section-image"/>
+                </HBox>
+                <Text class="hr-text sapUiSmallMargin" text="Double Bed Room"/>
+                <Text class="description-text sapUiSmallMargin" text="{i18n>DoubleBedDesc}"/>
+                <HBox justifyContent="End">
+                    <Button text="Book Now" press="onDoubleRoomPress" width="100px"/>
+                </HBox>
+            </VBox>
 
-    <content>
-      <VBox id="mainContainer" height="100%" class="mainContainer">
-        <VBox id="homeSection" visible="true" class="Homepage" height="100%" width="100%">
-          <Text text="🏠 Welcome to Shah Hostel" class="custom_welcome sapUiLargeMarginTop" />
-          <Button text="Book Room"/>
-        </VBox>
-
-        <VBox id="roomsSection" visible="false">
-          <Text text="🛏️ Explore our Rooms here!" class="sapUiLargeMargin" />
-        </VBox>
-
-        <VBox id="facilitiesSection" visible="false">
-          <Text text="🏋️ Facilities details appear here." class="sapUiLargeMargin" />
-        </VBox>
-
-        <VBox id="contactSection" visible="false">
-          <Text text="📞 Contact information goes here." class="sapUiLargeMargin" />
-        </VBox>
-
-        <VBox id="addDataSection" visible="false">
-          <Text text="📝 Add data section content here." class="sapUiLargeMargin" />
-        </VBox>
-      </VBox>
-    </content>
-  </Page>
+            <!-- 4 Bed -->
+            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid">
+                <HBox justifyContent="Center" class="section-image">
+                    <Image src="./image/4Bed.png" class="section-image"/>
+                </HBox>
+                <Text class="hr-text sapUiSmallMargin" text="Four Bed Room"/>
+                <Text class="description-text sapUiSmallMargin" text="{i18n>FourBedDesc}"/>
+                <HBox justifyContent="End">
+                    <Button text="Book Now" press="onFourRoomPress" width="100px"/>
+                </HBox>
+            </VBox>
+        </l:Grid>
+                    </Page>
+					<Page id="idFacilities" showHeader="false" class="Products_list sapUiTinyMargin">
+						<!-- <core:Fragment fragmentName="sap.kt.com.minihrsolution.fragment.ProductList" type="XML"/> -->
+					</Page>
+					<Page id="idContact" showHeader="false" class="Products_list sapUiTinyMargin">
+						<!-- <core:Fragment fragmentName="sap.kt.com.minihrsolution.fragment.Project" type="XML"/> -->
+					</Page>
+					<ScrollContainer id="idAdddata" horizontal="false" vertical="true" height="100%" class="sapUiContentPadding career-background sapUiTinyMargin">
+						<!-- <core:Fragment fragmentName="sap.kt.com.minihrsolution.fragment.CareerPage" type="XML"/> -->
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
 </mvc:View>

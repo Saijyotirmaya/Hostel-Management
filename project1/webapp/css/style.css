@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
 }
+.weblogo{
+    margin-left: -50px !important;
+}
 
 /* Header Styling */
 .headerBar {
@@ -56,33 +59,58 @@
 .loginButton {
   background-color: #1bb2bf !important;
   border-radius: 10px !important;
-  color: white !important;
+  color: rgb(214, 22, 22) !important;
   font-weight: bold;
-  margin-left: 10px;
-  font-size: 0.9rem;
+  font-size: 1rem !important;
 }
 
 /* Homepage Background */
 .Homepage {
-  background-image: url("../image/Homepage.png");
-  background-size: cover;
+  background-image: url("../image/Homepage1.png");
+ background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh !important;
-  width: 100%;
-  display: flex;
-  align-items: start;
-  justify-content: left;
+  border-radius: 0.6rem;
 }
-
 /* Welcome Text */
-.custom_welcome {
- line-height: 1;
-  color: #161515;
+.custom-welcome {
+  line-height: 1;
+  color: white;
   font-size: 48px;
   font-weight: bold;
   font-family: League spartan !important;
-  justify-content: end;
+}
+.custom-text{
+    font-size: 20px !important;
+}
+.custom-tagline {
+  font-size: 48px;
+  font-family: League spartan !important;
+  color: #ffffff;
+  font-weight: bold;
+}
+.RoomBook{
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
 }
 
-
+.HostelRooms{
+    background-image: url("../image/HostelRoom.png");
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.6rem;
+}
+.Welcomeroomtext{
+ line-height: 1;
+  color: black;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: League spartan !important;
+}
+.section-image{
+      border-radius: 10px 10px 0 0 ;
+  max-width: 100%;
+  height: auto;
+}

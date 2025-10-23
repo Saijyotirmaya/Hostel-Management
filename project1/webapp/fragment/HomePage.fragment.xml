@@ -5,7 +5,7 @@
 	xmlns:core="sap.ui.core">
 	 <Page id="idpage" showHeader="true" >
      <content>
-          <Text text="🏠 Welcome to the Home Section!" class="sapUiLargeMargin" />
+          <Text text="🏠 Welcome to the Home Section!"  />
      </content>
      </Page>
 
