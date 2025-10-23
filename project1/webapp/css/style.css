@@ -1,1 +1,88 @@
-/* Enter your custom styles here */
+/* General Page Styling */
+.mainPage, .mainContainer {
+  height: 100vh !important; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+.headerBar {
+  background-color: white !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  max-width: 100px;
+  height: auto;
+}
+
+.logoText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.navBar {
+  display: flex;
+  flex-wrap: wrap;           /* Allow items to wrap to new line */
+  justify-content: flex-end; /* Align to right on desktop */
+  align-items: center;
+  gap: 12px;                 /* Adds spacing between items */
+  text-align: center;
+}
+
+.navText {
+  color: #000000 !important;
+  font-size: 15px;
+  font-weight: bold !important;
+  background-color: transparent !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.navText:hover {
+  color: #00bcd4 !important;
+}
+
+/* Login Button */
+.loginButton {
+  background-color: #1bb2bf !important;
+  border-radius: 10px !important;
+  color: white !important;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+/* Homepage Background */
+.Homepage {
+  background-image: url("../image/Homepage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh !important;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+}
+
+/* Welcome Text */
+.custom_welcome {
+ line-height: 1;
+  color: #161515;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: League spartan !important;
+  justify-content: end;
+}
+
+

@@ -1,7 +1,58 @@
-<mvc:View controllerName="sap.ui.com.project1.controller.Hostel"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+<mvc:View
+  controllerName="sap.ui.com.project1.controller.Hostel"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core" 
+  xmlns:tnt="sap.tnt" 
+  displayBlock="true">
+
+  <Page id="page" showHeader="true" class="mainPage">
+    <customHeader>
+      <Bar design="Header" class="sapUiContentPadding headerBar">
+        <contentLeft>
+          <HBox alignItems="Center" class="logoContainer">
+            <Image src="./image/LOGO.png" width="100px" height="100px" class="sapUiTinyMarginTop logoImage" />
+            <Text text="SHAH HOSTEL" class="sapUiTinyMarginBegin sapUiSmallBold logoText" />
+          </HBox>
+        </contentLeft>
+       
+      <contentRight>
+  <HBox alignItems="Center" class="navBar sapUiTinyMarginTopBottom">
+    <Link text="Home" class="navText sapUiMediumMarginEnd" press="onNavPress" />
+    <Link text="Rooms" class="navText sapUiMediumMarginEnd" press="onNavPress" />
+    <Link text="Facilities" class="navText sapUiMediumMarginEnd" press="onNavPress" />
+    <Link text="Contact" class="navText sapUiMediumMarginEnd" press="onNavPress" />
+    <Link text="Add data" class="navText sapUiMediumMarginEnd" press="onNavPress" />
+    <Button text="LOGIN / SIGN UP" class="loginButton" press=".onLoginPress" />
+  </HBox>
+</contentRight>
+
+      </Bar>
+    </customHeader>
+
+    <content>
+      <VBox id="mainContainer" height="100%" class="mainContainer">
+        <VBox id="homeSection" visible="true" class="Homepage" height="100%" width="100%">
+          <Text text="🏠 Welcome to Shah Hostel" class="custom_welcome sapUiLargeMarginTop" />
+          <Button text="Book Room"/>
+        </VBox>
+
+        <VBox id="roomsSection" visible="false">
+          <Text text="🛏️ Explore our Rooms here!" class="sapUiLargeMargin" />
+        </VBox>
+
+        <VBox id="facilitiesSection" visible="false">
+          <Text text="🏋️ Facilities details appear here." class="sapUiLargeMargin" />
+        </VBox>
+
+        <VBox id="contactSection" visible="false">
+          <Text text="📞 Contact information goes here." class="sapUiLargeMargin" />
+        </VBox>
+
+        <VBox id="addDataSection" visible="false">
+          <Text text="📝 Add data section content here." class="sapUiLargeMargin" />
+        </VBox>
+      </VBox>
+    </content>
+  </Page>
 </mvc:View>
