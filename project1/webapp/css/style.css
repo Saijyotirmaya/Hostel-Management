@@ -77,14 +77,14 @@
   color: white;
   font-size: 48px;
   font-weight: bold;
-  font-family: League spartan !important;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 .custom-text{
     font-size: 20px !important;
 }
 .custom-tagline {
   font-size: 48px;
-  font-family: League spartan !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   color: #ffffff;
   font-weight: bold;
 }
@@ -103,16 +103,12 @@
 }
 .Welcomeroomtext{
  line-height: 1;
-  color: black;
+  color: white;
   font-size: 48px;
   font-weight: bold;
-  font-family: League spartan !important;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
-.section-image{
-      border-radius: 10px 10px 0 0 ;
-  max-width: 100%;
-  height: auto;
-}
+
 .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnTransparent .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnDefault .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnBack .sapMBtnContent, .sapUiSizeCompact .sapTntToolHeader .sapMBarChild:not(.sapMMenuBtn).sapMBtn .sapMBtnUp .sapMBtnContent {
     line-height: 2rem;
     color: white;
@@ -125,4 +121,40 @@
     text-overflow: ellipsis;
     vertical-align: bottom;
     font-size: 18px;
+}
+.HostelGrid {
+    margin-top: 24px;
+    justify-content: center;
+    height: 80% !important;
+}
+
+.HostelCard {
+    background: #1bb2bf;
+    color: #fff;
+    height: 450px !important;
+    
+    max-width: 370px;
+    margin: 20px auto 10px auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px black;
+    padding: 24px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-image {
+    margin-bottom: 5px;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 100%;
+}
+.hr-text {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+.description-text {
+    font-size: 1rem;
+    margin-bottom: 18px;
 }

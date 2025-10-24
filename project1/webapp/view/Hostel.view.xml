@@ -10,7 +10,7 @@
 	<tnt:ToolPage>	
 		<tnt:header>
 			<tnt:ToolHeader>
-				<Image src="./image/LOGO.png" height="250px" width="250px" class="sapUiTinyMarginEnd weblogo"  tooltip="Company Logo"/>
+				<Image src="./image/LOGO.png" height="250px" width="250px" class="sapUiTinyMarginTop weblogo"  tooltip="Company Logo"/>
 				<!-- <Title level="H1" text="SHAH HOSTEL" class="custom-text"/> -->
 				<ToolbarSpacer/>
 				<Button  text="LOGIN / SIGN UP" class="loginButton" tooltip="{i18n>tooltipLogin}" press="onpressLogin">
@@ -22,7 +22,7 @@
 		</tnt:header>
 		<tnt:subHeader>
 			<tnt:ToolHeader>
-               <ToolbarSpacer />
+               <!-- <ToolbarSpacer /> -->
                  
 				<IconTabHeader id="mainTabHeader" select="onTabSelect" >
 					<items >
@@ -44,10 +44,11 @@
 							<VBox class="sapUiLargeMarginTop">
 								<Text class="custom-welcome sapUiTinyMarginTopBottom" textAlign="Center" text="WelCome To "/>
 								<Text class="custom-welcome sapUiMediumMarginBegin sapUiTinyMarginTopBottom " text="Shah Hostel"/>
-								<Text text="Your New Home Away to me" class="custom-tagline sapUiTinyMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+								<Text text="Your New Home Away to me" class="custom-tagline sapUiTinyMarginTop sapUiLargeMarginBegin"/>
 							</VBox>
-                            <Button text="Book Room" class="RoomBook sapUiLargeMarginBegin " press="onpressBookrooms" />
+                           
 						</l:Grid>
+                         <Button text="Book Room" class="RoomBook sapUiLargeMarginBegin " press="onpressBookrooms" />
 					</ScrollContainer>
                     <Page id="idRooms" showHeader="false">
 
@@ -56,48 +57,48 @@
 							<VBox class="sapUiLargeMarginTop">
 								<Text class="Welcomeroomtext sapUiTinyMarginTopBottom" textAlign="Center" text="Book Your Room "/>
 								<Text class="Welcomeroomtext sapUiMediumMarginBegin sapUiTinyMarginTopBottom " text="Shah Hostel"/>
-								<Text text="Your New Home Away to me" class="Welcomeroomtext sapUiTinyMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd"/>
+								<Text text="Your New Home Away to me" class="Welcomeroomtext sapUiTinyMarginTop sapUiLargeMarginBegin"/>
 							</VBox>
 						</l:Grid>
 					</ScrollContainer>
-                      <l:Grid defaultSpan="XL4 L4 M6 S12" width="100%" hSpacing="2" vSpacing="2">
-            
-            <!-- Single Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/singleVisible}">
-                <HBox justifyContent="Center" class="section-image">
-                    <Image src="./image/SingleBed.png" class="section-image" press="onPressSingle"/>
-                </HBox>
-                <Text class="hr-text sapUiSmallMargin" text="Single Bed Room"/>
-                <Text class="description-text sapUiSmallMargin" text="{i18n>SingleBedDesc}"/>
-                <HBox justifyContent="End">
-                    <Button text="Book Now" press="onSingleRoomPress" width="100px"/>
-                </HBox>
-            </VBox>
+                    <l:Grid defaultSpan="XL4 L4 M6 S12" width="100%"  hSpacing="2" vSpacing="2" class="HostelGrid">
+    <!-- Single Bed -->
+    <VBox visible="{VisibilityModel>/singleVisible}" class="HostelCard" backgroundDesign="Solid">
+        <HBox justifyContent="Center" class="section-image">
+            <Image src="./image/SingleBed.png" width="380px" height="320px" class="section-image" />
+        </HBox>
+        <Text class="hr-text" text="Single Bed Room"/>
+        <Text class="description-text" text="{VisibilityModel>/singleDesc}"/>
+        <HBox justifyContent="Center">
+            <Button text="Book Now" press="onSingleRoomPress" width="200px" />
+        </HBox>
+    </VBox>
 
-            <!-- Double Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/doubleVisible}">
-                <HBox justifyContent="Center" class="section-image">
-                    <Image src="./image/DoubleBed.png" class="section-image"/>
-                </HBox>
-                <Text class="hr-text sapUiSmallMargin" text="Double Bed Room"/>
-                <Text class="description-text sapUiSmallMargin" text="{i18n>DoubleBedDesc}"/>
-                <HBox justifyContent="End">
-                    <Button text="Book Now" press="onDoubleRoomPress" width="100px"/>
-                </HBox>
-            </VBox>
+    <!-- Double Bed -->
+    <VBox visible="{VisibilityModel>/doubleVisible}" class="HostelCard" backgroundDesign="Solid">
+        <HBox justifyContent="Center" class="section-image">
+            <Image src="./image/DoubleBed.png" width="380px" height="320px" class="section-image" />
+        </HBox>
+        <Text class="hr-text" text="Double Bed Room"/>
+        <Text class="description-text" text="A private and comfortable space, single bed, study desk with chair, wardrobe or storage area. privacy, quietness, and convenience"/>
+        <HBox justifyContent="Center">
+            <Button text="Book Now" press="onDoubleRoomPress" width="200px"/>
+        </HBox>
+    </VBox>
 
-            <!-- 4 Bed -->
-            <VBox class="ProductSoluction sapUiSmallMargin" backgroundDesign="Solid" visible="{VisibilityModel>/fourVisible}">
-                <HBox justifyContent="Center" class="section-image">
-                    <Image src="./image/4Bed.png" class="section-image"/>
-                </HBox>
-                <Text class="hr-text sapUiSmallMargin" text="Four Bed Room"/>
-                <Text class="description-text sapUiSmallMargin" text="{i18n>FourBedDesc}"/>
-                <HBox justifyContent="End">
-                    <Button text="Book Now" press="onFourRoomPress" width="100px"/>
-                </HBox>
-            </VBox>
-        </l:Grid>
+    <!-- Four Bed -->
+    <VBox visible="{VisibilityModel>/fourVisible}" class="HostelCard" backgroundDesign="Solid">
+        <HBox justifyContent="Center" class="section-image">
+            <Image src="./image/4Bed.png" width="380px" height="320px" class="section-image" />
+        </HBox>
+        <Text class="hr-text" text="Four Bed Room"/>
+        <Text class="description-text " text="{i18n>FourBedDesc}"/>
+        <HBox justifyContent="Center">
+            <Button text="Book Now" press="onFourRoomPress" width="200px"/>
+        </HBox>
+    </VBox>
+</l:Grid>
+
                     </Page>
 					<Page id="idFacilities" showHeader="false" class="Products_list sapUiTinyMargin">
 						<!-- <core:Fragment fragmentName="sap.kt.com.minihrsolution.fragment.ProductList" type="XML"/> -->

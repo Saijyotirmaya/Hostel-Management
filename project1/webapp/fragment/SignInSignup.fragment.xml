@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Dialog id="authDialog"  draggable="true" resizable="true" class="authDialog">
+    <customHeader>
+    <Bar>
+      <contentMiddle>
+        <Title text="Student Portal Access" />
+      </contentMiddle>
+      <contentRight>
+        <Button type="Transparent" icon="sap-icon://decline" press="onDialogClose"/>
+      </contentRight>
+    </Bar>
+  </customHeader>
+    
+        <VBox>
+            <!-- Switch Button -->
+            <HBox justifyContent="Center" class="sapUiTinyMarginBottom">
+                <Button text="Sign In" width="100px" type="Emphasized" press="onSwitchToSignIn"/>
+                <Button text="Sign Up" width="100px" type="Transparent" press="onSwitchToSignUp"/>
+            </HBox>
+
+            <!-- Sign In Panel -->
+            <Panel id="signInPanel" expandable="false">
+                <VBox>
+                    <Input id="signInuserid" placeholder="UserID" type="Email" width="100%" required="true" />
+                    <Label text="Login with"/>
+                    <RadioButton text="Password" />
+                    <RadioButton text="OTP" />
+                    <Input id="signInPassword" placeholder="Password" type="Password" width="100%" required="true" />
+                    <HBox justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+                        <Button text="Forgot Password?" type="Transparent" press="onForgotPassword"/>
+                        <Button text="Sign In" type="Accept" width="100px" press="onSignIn"/>
+                    </HBox>
+                </VBox>
+            </Panel>
+
+            <!-- Sign Up Panel -->
+            <Panel id="signUpPanel" expandable="false" visible="false">
+                <VBox>
+                    <Input id="signUpName" placeholder="Full Name" value="{LoginMode>fullname}" width="100%" required="true" />
+                    <Input id="signUpEmail" placeholder="Email" value="{LoginMode>Email}" type="Email" width="100%" required="true" />
+                    <Input id="signUpPhone" placeholder="Mobile Number" value="{LoginMode>Mobileno}" type="Tel" width="100%" required="true" />
+                    <Input id="signUpPassword" value="{LoginMode>password}" placeholder="Create Password" type="Password" width="100%" required="true" />
+                    <Input id="signUpConfirmPassword" value="{LoginMode>comfirmpass}" placeholder="Confirm Password" type="Password" width="100%" required="true" />
+                    <Button text="Sign Up" type="Emphasized" width="100px" class="sapUiTinyMarginTop" press="onSignUp"/>
+                </VBox>
+            </Panel>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>
